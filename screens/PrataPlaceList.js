@@ -23,16 +23,23 @@ import {
     function renderItem({ item }) {
       return (
         <TouchableOpacity style={styles.PrataListCard} onPress={() => {}}>
-          <Text style={styles.PrataPlaceCardTitle}>{item.title}</Text>
+          <Text style={styles.PrataPlaceCardTitle}>{item.prataplace}</Text>
           <Text style={styles.PrataPlaceCardBodyText}>
             {item.address.substring(0, 120)}
+      
+          </Text>
+          <Text style={styles.PrataPlaceCardOpenHrsText}>
+            {item.openhrs.substring(0, 120)}
+          </Text>
+          <Text style={styles.Overall}>
+            Overall Votes
           </Text>
         </TouchableOpacity>
       );
     }
     return (
       <View style={styles.container}>
-        <Text style={styles.title}>Prata Place</Text>
+        <Text style={styles.title}>PRATA LIST</Text>
   
         <FlatList
           data={posts}
@@ -49,7 +56,7 @@ import {
   }
   
   const styles = StyleSheet.create({
-    PrataPlaceCard: {
+    PrataListCard: {
       borderColor: "gray",
       borderWidth: 1,
       padding: 15,
@@ -65,27 +72,40 @@ import {
       fontSize: 12,
       fontWeight: "300",
     },
+    PrataPlaceCardOpenHrsText: {
+      fontSize: 12,
+      fontWeight: "300",
+    },
+    Overall: {
+      fontSize: 22,
+      color:"#BCA6C3",
+      textAlign:"center",
+      fontWeight: "600",
+      paddingTop: 5,
+    },
     container: {
       flex: 1,
-      backgroundColor: "#fff",
+      backgroundColor: "#FFFCFC",
       paddingTop: 100,
       padding: 25,
     },
     title: {
       fontWeight: "bold",
+      color: "#6D3D78",
+      textAlign: "center",
       fontSize: 40,
       marginBottom: 20,
     },
     button: {
-      backgroundColor: "black",
+      backgroundColor: "#F5EAF9",
       borderRadius: 15,
       width: "100%",
     },
     buttonText: {
       textAlign: "center",
-      fontWeight: "400",
-      fontSize: 17,
+      fontWeight: "600",
+      fontSize: 28,
       padding: 20,
-      color: "white",
+      color: "#FA3895",
     },
   });
